@@ -1,0 +1,10 @@
+stages:
+  - prepare
+  - build
+
+build:
+  stage: build
+  script:
+    - mkdir -p build && cd build
+    - cmake ..
+    -  make
