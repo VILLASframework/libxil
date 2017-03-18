@@ -61,6 +61,8 @@
  *
  *****************************************************************************/
 
+#include <inttypes.h>
+
 #include "xaxidma_bd.h"
 
 /************************** Function Prototypes ******************************/
@@ -137,8 +139,8 @@ u32 XAxiDma_BdSetBufAddr(XAxiDma_Bd* BdPtr, UINTPTR Addr)
 
 	if (Addr & (WordLen - 1)) {
 		if ((HasDRE & XAXIDMA_BD_HAS_DRE_MASK) == 0) {
-			xil_printf("Error set buf addr %x with %x and %x,"
-			" %x\r\n",Addr, HasDRE, (WordLen - 1),
+			xil_printf("Error set buf addr %" PRIuPTR " with %x and %x,"
+			" %" PRIuPTR "\r\n",Addr, HasDRE, (WordLen - 1),
 			Addr & (WordLen - 1));
 
 			return XST_INVALID_PARAM;
@@ -175,8 +177,8 @@ u32 XAxiDma_BdSetBufAddrMicroMode(XAxiDma_Bd* BdPtr, UINTPTR Addr)
 	Addrlen = XAxiDma_BdRead(BdPtr, XAXIDMA_BD_ADDRLEN_OFFSET);
 
 	if (Addr & XAXIDMA_MICROMODE_MIN_BUF_ALIGN) {
-			xil_printf("Error set buf addr %x and %x,"
-			" %x\r\n", Addr, XAXIDMA_MICROMODE_MIN_BUF_ALIGN,
+			xil_printf("Error set buf addr %" PRIuPTR " and %x,"
+			" %" PRIuPTR "\r\n", Addr, XAXIDMA_MICROMODE_MIN_BUF_ALIGN,
 			Addr & XAXIDMA_MICROMODE_MIN_BUF_ALIGN);
 
 			return XST_INVALID_PARAM;
@@ -315,7 +317,7 @@ void XAxiDma_BdSetCtrl(XAxiDma_Bd* BdPtr, u32 Data)
 void XAxiDma_DumpBd(XAxiDma_Bd* BdPtr)
 {
 
-	xil_printf("Dump BD %x:\r\n", (UINTPTR)BdPtr);
+	xil_printf("Dump BD %lx:\r\n", (UINTPTR)BdPtr);
 	xil_printf("\tNext Bd Ptr: %x\r\n",
 	    (unsigned int)XAxiDma_BdRead(BdPtr, XAXIDMA_BD_NDESC_OFFSET));
 	xil_printf("\tBuff addr: %x\r\n",

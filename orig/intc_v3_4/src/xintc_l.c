@@ -271,11 +271,15 @@ void XIntc_DeviceInterruptHandler(void *DeviceId)
 				Xil_Out32(CfgPtr->BaseAddress + XIN_ILR_OFFSET,
 								ILR_reg);
 #endif
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-value"
 				/*
 				 * Read the ISR again to handle architectures
 				 * with posted write bus access issues.
 				 */
 				 XIntc_GetIntrStatus(CfgPtr->BaseAddress);
+#pragma GCC diagnostic pop
 
 				/*
 				 * If only the highest priority interrupt is to
