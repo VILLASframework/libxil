@@ -33,7 +33,7 @@ The development headers for libxil.
 %build
 mkdir -p build
 cd build
-%cmake ..
+%cmake -DCMAKE_INSTALL_LIBDIR=${_libdir} ..
 make
 
 %install
@@ -48,11 +48,11 @@ make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %files
-/usr/lib/libxil.so
-/usr/lib/pkgconfig/libxil.pc
+%{_libdir}/libxil.so
+%{_libdir}/pkgconfig/libxil.pc
 
 %files devel
-/usr/include/xilinx/*
+%{_includedir}/xilinx/*
 
 %changelog
 * Fri Mar 17 2017 Steffen Vogel <stvogel@eonerc.rwth-aachen.de

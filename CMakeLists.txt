@@ -19,10 +19,10 @@ if(PKG_CONFIG_FOUND)
 
 	# Produce a pkg-config file for linking against the shared lib
 	configure_file("libxil.pc.in" "libxil.pc" @ONLY)
-	install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libxil.pc" DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig")
+	install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libxil.pc" DESTINATION "${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}/pkgconfig")
 endif()
 
-install(TARGETS xil DESTINATION lib)
+install(TARGETS xil DESTINATION "lib${LIB_SUFFIX}")
 
 file(GLOB HEADERS include/xilinx/*.h)
 
