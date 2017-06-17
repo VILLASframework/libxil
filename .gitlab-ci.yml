@@ -7,4 +7,6 @@ build:
   script:
     - mkdir -p build && cd build
     - cmake ..
-    -  make
+    - make
+  tags:
+    - shell
