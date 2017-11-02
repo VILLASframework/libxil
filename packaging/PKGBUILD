@@ -1,0 +1,27 @@
+# $Id$
+# Maintainer: Daniel Krebs <github@daniel-krebs.net>
+pkgname=libxil
+BRANCH=master
+COMMIT=1e9ba6ce5568b2712fef60f8a1923aeb3979bda7
+pkgver=0.1
+pkgrel=1
+pkgdesc="Modified Xilinx drivers for VILLASnode: https://github.com/Xilinx/embeddedsw"
+arch=('i686' 'x86_64')
+url="http://libxil.org"
+source=("https://git.rwth-aachen.de/VILLASframework/libxil/repository/${BRANCH}/archive.tar.bz2?sha=${COMMIT}")
+sha256sums=(SKIP)
+
+build() {
+	mkdir -p "$srcdir/$pkgname-$BRANCH-$COMMIT/build"
+	cd "$srcdir/$pkgname-$BRANCH-$COMMIT/build"
+
+	cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+	make
+}
+
+package() {
+	cd "$srcdir/$pkgname-$BRANCH-$COMMIT/build"
+
+	make DESTDIR="$pkgdir" install
+}
+
