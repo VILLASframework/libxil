@@ -1,12 +1,34 @@
+variables:
+  GIT_STRATEGY: fetch
+  GIT_SUBMODULE_STRATEGY: recursive
+  DOCKER_TAG_DEV: ${CI_COMMIT_REF_NAME}
+  DOCKER_IMAGE_DEV: villas/libxil-dev
+
 stages:
   - prepare
   - build
 
+# Stage: prepare
+##############################################################################
+
+docker:
+  stage: prepare
+  script:
+    - docker build -t ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV} .
+  tags:
+    - shell
+    - linux
+
+# Stage: build
+##############################################################################
+
 build:
   stage: build
   script:
-    - mkdir -p build && cd build
+    - mkdir -p build
+    - cd build
     - cmake ..
     - make
+  image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
   tags:
-    - shell
+    - docker
