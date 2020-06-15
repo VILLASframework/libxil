@@ -63,18 +63,25 @@ extern "C" {
 
 /***************** Macros (Inline Functions) Definitions *********************/
 
-#define Xil_AssertVoid(expr)                                            \
-  ((expr)                                                               \
-   ? __ASSERT_VOID_CAST (0)                                             \
-   : __assert_fail (__STRING(expr), __FILE__, __LINE__, __ASSERT_FUNCTION))
-#define Xil_AssertNonvoid(expr)                                         \
-  ((expr)                                                               \
-   ? __ASSERT_VOID_CAST (0)                                             \
-   : __assert_fail (__STRING(expr), __FILE__, __LINE__, __ASSERT_FUNCTION))
-#define Xil_AssertVoidAlways()                                          \
-  __assert_fail ("always", __FILE__, __LINE__, __ASSERT_FUNCTION)
-#define Xil_AssertNonvoidAlways()                                       \
-  __assert_fail ("always", __FILE__, __LINE__, __ASSERT_FUNCTION)
+#if 0
+  #define Xil_AssertVoid(expr)                                            \
+    ((expr)                                                               \
+     ? __ASSERT_VOID_CAST (0)                                             \
+     : __assert_fail (__STRING(expr), __FILE__, __LINE__, __ASSERT_FUNCTION))
+  #define Xil_AssertNonvoid(expr)                                         \
+    ((expr)                                                               \
+     ? __ASSERT_VOID_CAST (0)                                             \
+     : __assert_fail (__STRING(expr), __FILE__, __LINE__, __ASSERT_FUNCTION))
+  #define Xil_AssertVoidAlways()                                          \
+    __assert_fail ("always", __FILE__, __LINE__, __ASSERT_FUNCTION)
+  #define Xil_AssertNonvoidAlways()                                       \
+    __assert_fail ("always", __FILE__, __LINE__, __ASSERT_FUNCTION)
+#else
+  #define Xil_AssertVoid(expr) assert(expr)
+  #define Xil_AssertNonvoid(expr) assert(expr)
+  #define Xil_AssertVoidAlways() assert(0)
+  #define Xil_AssertNonvoidAlways() assert(0)
+#endif
 
 /************************** Function Prototypes ******************************/
 
