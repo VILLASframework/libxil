@@ -192,7 +192,7 @@ extern "C" {
 #ifdef DEBUG
 extern u32 _xllfifo_rr_value;
 #define XLlFifo_ReadReg(BaseAddress, RegOffset) \
-	((((RegOffset) > 0x24) ? xdbg_printf(XDBG_DEBUG_ERROR, \
+	((((RegOffset) > 0x30) ? xdbg_printf(XDBG_DEBUG_ERROR, \
 		"XLlFifo_WriteReg: Woah! wrong reg addr: 0x%08x\n", \
 		(RegOffset)) : 0), \
 	_xllfifo_rr_value = Xil_In32((BaseAddress) + (RegOffset)), \
@@ -225,7 +225,7 @@ extern u32 _xllfifo_rr_value;
 *****************************************************************************/
 #ifdef DEBUG
 #define XLlFifo_WriteReg(BaseAddress, RegOffset, Value) \
-	(((RegOffset) > 0x24) ? xdbg_printf(XDBG_DEBUG_ERROR, \
+	(((RegOffset) > 0x30) ? xdbg_printf(XDBG_DEBUG_ERROR, \
 		"XLlFifo_WriteReg: Woah! wrong reg addr: 0x%08x\n", \
 		(RegOffset)) : 0), \
 	XLlFifo_print_reg_o((BaseAddress), (RegOffset), (Value)), \
