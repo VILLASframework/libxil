@@ -1,0 +1,1 @@
+../../orig/xilflash/src/include/xilflash_properties.h
