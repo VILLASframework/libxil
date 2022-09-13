@@ -1,1 +1,1 @@
-../../orig/common_v1_00_a/src/xstatus.h
+../../orig/common/xstatus.h

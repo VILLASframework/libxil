@@ -1,1 +1,1 @@
-../../orig/common_v1_00_a/src/xenv_standalone.h
+../../orig/common/xenv_standalone.h

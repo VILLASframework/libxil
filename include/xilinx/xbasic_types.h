@@ -1,1 +1,1 @@
-../../orig/common_v1_00_a/src/xbasic_types.h
+../../orig/common/xbasic_types.h
