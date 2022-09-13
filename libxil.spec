@@ -1,5 +1,5 @@
 Name:    libxil
-Version: 0.1
+Version: 1.1
 Vendor: Institute for Automation of Complex Power Systems
 Packager: Steffen Vogel <stvogel@eonerc.rwth-aachen.de>
 Release: 1%{?dist}
