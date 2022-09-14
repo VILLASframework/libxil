@@ -2,11 +2,11 @@ cmake_minimum_required (VERSION 3.0.2)
 
 project(libxil C)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -fPIC -I${SRCDIR}/include/xilinx -Iorig/common_v1_00_a/src -Wno-int-conversion -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -fPIC  -Wno-int-conversion -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast")
 
 file(GLOB SOURCES src/*.c orig/*/src/*.c)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/xilinx)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/xilinx ${CMAKE_CURRENT_SOURCE_DIR}/orig/common)
 
 add_library(xil SHARED ${SOURCES})
 
