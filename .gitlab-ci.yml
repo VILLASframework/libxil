@@ -5,8 +5,8 @@ variables:
   DOCKER_IMAGE_DEV: villas/libxil-dev
 
 stages:
-  - prepare
-  - build
+- prepare
+- build
 
 # Stage: prepare
 ##############################################################################
@@ -14,10 +14,9 @@ stages:
 docker:
   stage: prepare
   script:
-    - docker build -t ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV} .
+  - docker build -t ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV} .
   tags:
-    - shell
-    - linux
+  - docker
 
 # Stage: build
 ##############################################################################
@@ -25,10 +24,10 @@ docker:
 build:
   stage: build
   script:
-    - mkdir -p build
-    - cd build
-    - cmake ..
-    - make
+  - mkdir -p build
+  - cd build
+  - cmake ..
+  - make
   image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
   tags:
-    - docker
+  - docker
