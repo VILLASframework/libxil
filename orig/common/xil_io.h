@@ -61,26 +61,11 @@ extern u32 XStl_RegUpdate(u32 RegAddr, u32 RegVal);
 #endif
 
 /***************** Macros (Inline Functions) Definitions *********************/
-#if defined __GNUC__
-#if defined (__MICROBLAZE__)
-#  define INST_SYNC		mbar(0)
-#  define DATA_SYNC		mbar(1)
-#elif defined (__x86_64__)
-#  define SYNCHRONIZE_IO
-#  define INST_SYNC
-#  define DATA_SYNC
-# else
-#  define SYNCHRONIZE_IO	dmb()
-#  define INST_SYNC		isb()
-#  define DATA_SYNC		dsb()
-# endif
-#else
 # define SYNCHRONIZE_IO
 # define INST_SYNC
 # define DATA_SYNC
 # define INST_SYNC
 # define DATA_SYNC
-#endif
 
 #if defined (__GNUC__) || defined (__ICCARM__) || defined (__MICROBLAZE__)
 #define INLINE inline
