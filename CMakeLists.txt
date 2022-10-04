@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.0.2)
 
 project(libxil C)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -fPIC  -Wno-int-conversion -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -fPIC  -Wno-int-conversion -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast -Wl,--no-undefined")
 
 file(GLOB SOURCES src/*.c orig/*/src/*.c)
 
