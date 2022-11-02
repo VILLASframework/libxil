@@ -2,7 +2,12 @@ cmake_minimum_required (VERSION 3.0.2)
 
 project(libxil C)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -fPIC  -Wno-int-conversion -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast -Wl,--no-undefined")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -fPIC -Wno-int-conversion -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast -Wl,--no-undefined")
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message("Enabling debug mode")
+	add_compile_definitions("DEBUG")
+endif()
 
 file(GLOB SOURCES src/*.c orig/*/src/*.c)
 
