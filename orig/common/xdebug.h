@@ -15,7 +15,7 @@ extern "C" {
 
 #ifndef XDEBUG_WARNING
 #define XDEBUG_WARNING
-#warning DEBUG is enabled
+// #warning DEBUG is enabled
 #endif
 
 int printf(const char *format, ...);
