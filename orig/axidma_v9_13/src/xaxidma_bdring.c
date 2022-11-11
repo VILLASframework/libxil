@@ -1364,7 +1364,7 @@ int XAxiDma_BdRingFree(XAxiDma_BdRing * RingPtr, int NumBd,
 	if ((RingPtr->PostCnt < NumBd) || (RingPtr->PostHead != BdSetPtr)) {
 
 		xdbg_printf(XDBG_DEBUG_ERROR, "BdRingFree: Error free BDs: "
-		"post count %d to free %d, PostHead %x to free ptr %x\r\n",
+		"post count %d to free %d, PostHead %lx to free ptr %lx\r\n",
 			RingPtr->PostCnt, NumBd,
 			(UINTPTR)RingPtr->PostHead,
 			(UINTPTR)BdSetPtr);
