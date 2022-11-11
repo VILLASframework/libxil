@@ -11,9 +11,17 @@ endif()
 
 file(GLOB SOURCES src/*.c orig/*/src/*.c)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/xilinx ${CMAKE_CURRENT_SOURCE_DIR}/orig/common)
-
 add_library(xil SHARED ${SOURCES})
+
+target_include_directories(xil PRIVATE
+	${CMAKE_CURRENT_SOURCE_DIR}/include/xilinx
+	${CMAKE_CURRENT_SOURCE_DIR}/orig/common
+)
+
+target_include_directories(xil PUBLIC
+	${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
 
 include(FindPkgConfig QUIET)
 if(PKG_CONFIG_FOUND)
