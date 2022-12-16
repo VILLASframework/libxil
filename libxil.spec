@@ -1,7 +1,7 @@
 Name:    libxil
 Version: 1.1
 Vendor: Institute for Automation of Complex Power Systems
-Packager: Steffen Vogel <stvogel@eonerc.rwth-aachen.de>
+Packager: Steffen Vogel <post@steffenvogel.de>
 Release: 1%{?dist}
 Summary: Modified Xilinx drivers for VILLASnode
 
@@ -55,5 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/xilinx/*
 
 %changelog
-* Fri Mar 17 2017 Steffen Vogel <stvogel@eonerc.rwth-aachen.de
+* Fri Mar 17 2017 Steffen Vogel <post@steffenvogel.de
 - Initial RPM release
