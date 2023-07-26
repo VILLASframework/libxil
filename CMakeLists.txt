@@ -9,6 +9,8 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 	add_compile_definitions("DEBUG")
 endif()
 
+include(GNUInstallDirs)
+
 file(GLOB SOURCES src/*.c orig/*/src/*.c)
 
 add_library(xil SHARED ${SOURCES})
