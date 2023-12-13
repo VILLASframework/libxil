@@ -19,3 +19,138 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2005 - 2020 Xilinx, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/data/iic_tapp.tcl
+--------------------------------------------------------------------------------
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved. Copyright
+(c) 2021 Xilinx, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/data/iic.yaml
+orig/iic/examples/CMakeLists.txt
+orig/iic/src/CMakeLists.txt
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2004 - 2020 Xilinx, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/data/iic.tcl
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2005 - 2021 Xilinx, Inc. All rights reserved. Copyright (C) 2022 -
+2023 Advanced Micro Devices, Inc. All Rights Reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/data/iic_header.h
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2002 - 2021 Xilinx, Inc. All rights reserved. Copyright (c) 2022 -
+2023 Advanced Micro Devices, Inc. All Rights Reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/examples/xiic_low_level_eeprom_example.c
+orig/iic/examples/xiic_low_level_tempsensor_example.c
+orig/iic/examples/xiic_selftest_example.c
+orig/iic/src/xiic.h
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2005 - 2021 Xilinx, Inc. All rights reserved. Copyright (c) 2022 -
+2023 Advanced Micro Devices, Inc. All Rights Reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/data/iic.mdd
+orig/iic/src/xiic_sinit.c
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2002 - 2021 Xilinx, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/src/xiic.c
+orig/iic/src/xiic_g.c
+orig/iic/src/xiic_i.h
+orig/iic/src/xiic_l.c
+orig/iic/src/xiic_l.h
+orig/iic/src/xiic_master.c
+orig/iic/src/xiic_multi_master.c
+orig/iic/src/xiic_options.c
+orig/iic/src/xiic_slave.c
+orig/iic/src/xiic_stats.c
+--------------------------------------------------------------------------------
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2006 - 2021 Xilinx, Inc. All rights reserved. Copyright (c) 2022 -
+2023 Advanced Micro Devices, Inc. All Rights Reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/examples/xiic_dynamic_eeprom_example.c
+orig/iic/examples/xiic_eeprom_example.c
+orig/iic/examples/xiic_multi_master_example.c
+orig/iic/examples/xiic_repeated_start_example.c
+orig/iic/examples/xiic_slave_example.c
+orig/iic/examples/xiic_tempsensor_example.c
+orig/iic/examples/xiic_tenbitaddr_example.c
+--------------------------------------------------------------------------------
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2006 - 2020 Xilinx, Inc. All rights reserved. Copyright (c) 2022 -
+2023 Advanced Micro Devices, Inc. All Rights Reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+XilinxProcessorIPLib/drivers/iic/examples/xiic_low_level_dynamic_eeprom_example.c
+--------------------------------------------------------------------------------
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2006 - 2021 Xilinx, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/src/xiic_dyn_master.c
+orig/iic/src/xiic_intr.c
+--------------------------------------------------------------------------------
+
+
+COPYRIGHT TEXT:
+---------------
+
+Copyright (C) 2012 - 2021 Xilinx, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
+
+FILES:
+orig/iic/src/xiic_selftest.c
+--------------------------------------------------------------------------------
