@@ -119,8 +119,8 @@ extern "C" {
 typedef struct {
 	u16 DeviceId;		/**< DeviceId is the unique ID of the AXI4-
 				  *  Stream Switch core */
-	u32 BaseAddress;	/**< BaseAddress is the physical base address
-				  *  of the core's registers */
+	u64 BaseAddress;	/**< BaseAddress is the physical base address
+						 *  of the core's registers */
 	u8 MaxNumSI;		/**< Maximum number of Slave interfaces */
 	u8 MaxNumMI;		/**< Maximum number of Master interfaces */
 } XAxis_Switch_Config;
@@ -184,7 +184,7 @@ XAxis_Switch_Config *XAxisScr_LookupConfig(u16 DeviceId);
 
 /* Initialization and control functions in xaxis_switch.c */
 s32 XAxisScr_CfgInitialize(XAxis_Switch *InstancePtr,
-			XAxis_Switch_Config *CfgPtr, u32 EffectiveAddr);
+						   XAxis_Switch_Config *CfgPtr, u64 EffectiveAddr);
 
 void XAxisScr_MiPortEnable(XAxis_Switch *InstancePtr, u8 MiIndex,
 				u8 SiIndex);
