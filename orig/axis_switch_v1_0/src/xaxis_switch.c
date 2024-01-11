@@ -94,12 +94,12 @@
 *
 ******************************************************************************/
 s32 XAxisScr_CfgInitialize(XAxis_Switch *InstancePtr,
-			XAxis_Switch_Config *CfgPtr, u32 EffectiveAddr)
+			XAxis_Switch_Config *CfgPtr, u64 EffectiveAddr)
 {
 	/* Verify arguments. */
 	Xil_AssertNonvoid(InstancePtr != NULL);
 	Xil_AssertNonvoid(CfgPtr != NULL);
-	Xil_AssertNonvoid(EffectiveAddr != (u32)0x0);
+	Xil_AssertNonvoid(EffectiveAddr != (u64)0x0);
 
 	/* Setup the instance */
 	(void)memset((void *)InstancePtr, 0, sizeof(XAxis_Switch));
