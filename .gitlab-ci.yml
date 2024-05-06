@@ -1,8 +1,9 @@
 variables:
   GIT_STRATEGY: fetch
   GIT_SUBMODULE_STRATEGY: recursive
-  DOCKER_TAG_DEV: ${CI_COMMIT_REF_NAME}
-  DOCKER_IMAGE_DEV: villas/libxil-dev
+  DOCKER_TAG: ${CI_COMMIT_REF_NAME}
+  DOCKER_IMAGE: registry.git.rwth-aachen.de/acs/public/villas/fpga/libxil
+  DOCKER_IMAGE_DEV: ${DOCKER_IMAGE}/dev
 
 stages:
 - prepare
@@ -13,10 +14,13 @@ stages:
 
 docker:
   stage: prepare
+  before_script:
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   script:
-  - docker build -t ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV} .
+  - docker build -t ${DOCKER_IMAGE_DEV}:${DOCKER_TAG} .
+  - docker push ${DOCKER_IMAGE_DEV}:${DOCKER_TAG}
   tags:
-  - docker
+  - docker-image-builder
 
 # Stage: build
 ##############################################################################
@@ -28,4 +32,4 @@ build:
   - cd build
   - cmake ..
   - make
-  image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
+  image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG}
