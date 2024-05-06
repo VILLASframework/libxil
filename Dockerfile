@@ -1,4 +1,7 @@
-FROM fedora:27
+ARG DISTRO=fedora
+ARG FEDORA_VERSION=36
+
+FROM ${DISTRO}:${FEDORA_VERSION} AS dev
 
 LABEL \
 	org.label-schema.schema-version="1.0" \
