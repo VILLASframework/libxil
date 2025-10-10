@@ -1,17 +1,17 @@
-# $Id$
 # Maintainer: Daniel Krebs <github@daniel-krebs.net>
+# Contributor: Bekir Altindal <bekir.altindal@rwth-aachen.de>
+
 pkgname=libxil
-branch=master
-pkgver=0.1
-pkgrel=2
+pkgver=0.1.0
+pkgrel=3
 pkgdesc="Modified Xilinx drivers for VILLASnode: https://github.com/Xilinx/embeddedsw"
 arch=('x86_64')
-url="https://git.rwth-aachen.de/VILLASframework/libxil/"
-source=("$url/repository/$branch/archive.tar.bz2")
+url="https://github.com/VILLASframework/${pkgname}"
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=(SKIP)
 
 build() {
-	cd "$(sh -c "echo ${pkgname}-*")"
+	cd ${pkgname}-${pkgver}
 
 	mkdir -p build
 	cd build
@@ -21,7 +21,7 @@ build() {
 }
 
 package() {
-	cd "$(sh -c "echo ${pkgname}-*")"/build
+	cd ${pkgname}-${pkgver}/build
 
 	make DESTDIR="$pkgdir" install
 }
