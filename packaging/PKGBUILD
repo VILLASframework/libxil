@@ -3,26 +3,29 @@
 
 pkgname=libxil
 pkgver=0.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Modified Xilinx drivers for VILLASnode: https://github.com/Xilinx/embeddedsw"
 arch=('x86_64')
 url="https://github.com/VILLASframework/${pkgname}"
-source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
+license=(MIT)
+makedepends=(cmake
+             git)
+#source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
+source=("${pkgname}-${pkgver}::git+https://github.com/bekiralti/libxil#branch=tmp")
 sha256sums=(SKIP)
 
 build() {
-	cd ${pkgname}-${pkgver}
+  cd ${pkgname}-${pkgver}
 
-	mkdir -p build
-	cd build
+  mkdir -p build
+  cd build
 
-	cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-	make
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+  make
 }
 
 package() {
-	cd ${pkgname}-${pkgver}/build
+  cd ${pkgname}-${pkgver}/build
 
-	make DESTDIR="$pkgdir" install
+  make DESTDIR="$pkgdir" install
 }
-
