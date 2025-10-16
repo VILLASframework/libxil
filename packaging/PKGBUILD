@@ -8,10 +8,8 @@ pkgdesc="Modified Xilinx drivers for VILLASnode: https://github.com/Xilinx/embed
 arch=('x86_64')
 url="https://github.com/VILLASframework/${pkgname}"
 license=(MIT)
-makedepends=(cmake
-             git)
-#source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-source=("${pkgname}-${pkgver}::git+https://github.com/bekiralti/libxil#branch=tmp")
+makedepends=(cmake)
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=(SKIP)
 
 build() {
